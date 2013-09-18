@@ -10,3 +10,7 @@ This repository houses a living set of documents for standardized software devel
 - Reduce wasted time and effort
 - Simplify developer communication and interaction
 - Eliminate confusion and frustration
+
+## Table of Contents
+
+[Issue Management](issues.md)
