@@ -13,5 +13,5 @@ This repository houses a living set of documents for standardized software devel
 
 ## Table of Contents
 
-[Issue Management](issues.md)
-[Version Control](vcs.md)
+- [Issue Management](issues.md)
+- [Version Control](vcs.md)
