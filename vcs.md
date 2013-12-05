@@ -1,8 +1,21 @@
 Software Version Control
 ===============
 
-#### Branching
-The `master` branch is always in a deployable state. Code has to pass QA before being merged here. 
+### Branching
+
+###### Basic Rules
+
+* Only create new branches from `quality`
+* Start new features in branches named `feature/[feature name]`
+* Merge features into `episode/[release name]` for integration/review
+* Make pre-deploy bug fixes or hot fixes in branches named `fix/[issue #]`
+* Only merge accepted code to `quality` via Pull Request
+* Pull Requests to `quality` must be reviewed by someone other than the requester
+* Only merge to `master` via Pull Request from `quality`
+
+###### Workflow
+
+The `master` branch is always in a deployable state. Code has to pass QA before being merged here. You may never branch from `master` and pull requests may only be made from the `quality` branch. 
 
 The `quality` branch is used for quality testing before sending code to the master branch. 
 It is also the sole starting point for any new feature branches to be forked from. No major work should happen in this branch only minor bug fixes, these fixes will typically be related to fixing issues in preperation for deployment. 
@@ -11,6 +24,18 @@ The `integration` branch is used as our integration and presentation branch. Use
 
 
 The `feature/feature-name` branches are used for feature development, these should only be forked from the `quality` branch. No other feature branches should be merged into a specific feature branch. (e.g. `feature/a` and `feature/b` should only be merged together when moving to `integration`) 
+
+<pre>
+(master) ---------------------------------------------------------------------------------------- *
+                                                                                                 /
+(quality) --------- * ---------------------------------------------------- * ------------------ *
+                    \\\                                                   / \                  /
+         (episode/1) \\* --------------------------------- * ----------- *   \                /
+                      \\                                  /             /     \              /
+          (feature/A)  \* -------- * -------- * -------- *             /       \            /
+                        \                                             / (fix/1) * -------- *
+             (feature/B) * -------- * -------- * -------- * -------- *
+</pre>
 
 
 #### Committing Your Work
